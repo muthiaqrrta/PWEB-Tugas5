@@ -1,0 +1,43 @@
+body{
+    padding: 5%;
+}
+
+h1{
+    font-weight: bold !important;
+    color:#0067ac !important;
+    text-align: center;
+    padding: 10px;
+}
+
+.form-container{
+    margin: auto;
+    background-color: #edf2f4;
+    border-radius: 5px;
+    padding: 40px;
+}
+
+.form-content{
+    margin:10px;
+}
+
+form{
+    width:100%;
+    height: auto;
+}
+
+legend,label{
+    margin:5px;
+    font-weight: bold !important;
+}
+
+.btn{
+    background-color: #0067ac !important;
+    color: white !important;
+}
+
+ul{
+    list-style:none;
+    float: right !important;
+    margin: 30px;
+    padding:50px;
+}

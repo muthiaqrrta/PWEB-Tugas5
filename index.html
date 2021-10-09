@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Kuliah Offline</title>
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+</head>
+<body>
+    <div class="form-container">
+        <div class="formulir">
+            <h1>Formulir Persetujuan Kuliah Offline</h1>
+            <form autocomplete="off" name="ptm" onsubmit="return validateForm();">
+                <div class="form-content">
+                    <label>Nama Lengkap</label>
+                    <input type="text" name="nama" placeholder="Nama" class="form-control" maxlength="50">
+                </div>
+                <div class="form-content">
+                    <label>NRP</label>
+                    <input type="text" name="nrp" placeholder="NRP" class="form-control" maxlength="14" minlength="14">
+                </div>
+                <div class="form-content">
+                    <label>Alamat</label>
+                    <input type="text" name="alamat" placeholder="Alamat" class="form-control">
+                </div>
+                <div class="form-content">
+                    <label>Email</label>
+                    <input type="text" name="email" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-content">
+                    <label>Fakultas</label>
+                    <select name="fakultas" id="fakultas" class="form-control" required>
+                            <option value="0">Fakultas</option>
+                            <option value="creabiz">CREABIZ</option>
+                            <option value="indsys">INDSYS</option>
+                            <option value="electics">ELECTICS</option>
+                            <option value="civplan">CIVPLAN</option>
+                            <option value="martech">MARTECH</option>
+                            <option value="scientics">SCIENTICS</option>
+                    </select>
+                    <label>Jurusan</label>
+                    <select name="jurusan" id="jurusan" class="form-control" required>
+                            <option value="">Jurusan</option>
+                    </select>
+                </div>
+                <div class="form-content">
+                    <label>Status Vaksin :</label>
+					<br>
+                    <input type="radio" name="status_vaksin" value="Belum" required> Belum Vaksin<br>
+                    <input type="radio" name="status_vaksin" value="Sudah1"> Dosis-1<br>
+                    <input type="radio" name="status_vaksin" value="Sudah2"> Dosis-2<br>
+                </div>
+                <div class="form-content">
+                    <label>Status Penyintas :</label>
+					<br>
+                    <input type="radio" name="status_penyintas" value="Iya" required> Penyintas<br>
+                    <input type="radio" name="status_penyintas" value="Tidak"> Bukan Penyintas<br>
+                    <br>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+	$(document).ready(function() {
+
+		$("#fakultas").change(function() {
+			var val = $(this).val();
+			if (val == "creabiz") {
+				$("#jurusan").html(
+					"<option value='MB'>Manajemen Bisnis</option><option value='DESPRO'>Desain Produk Industri</option><option value='MT'>Manajemen Teknologi</option><option value='DESINT'>Desain Interior</option><option value='DEVSTUD'>Studi Pembangunan</option><option value='DKV'>DKV</option>");
+			} else if (val == "indsys") {
+				$("#jurusan").html(
+					"<option value='TI'>Teknik Industri</option><option value='TM'>Teknik Mesin</option><option value='TK'>Teknik Kimia</option><option value='TF'>Teknik Fisika</option><option value='Mamet'>Teknik Material dan Metalurgi</option>");
+			} else if (val == "electics") {
+				$("#jurusan").html(
+					"<option value='TC'>Teknik Informatika</option><option value='SI'>Sistem Informasi</option><option value='TInformasi'>Teknologi Informasi</option><option value='TE'>Teknik Elektro</option><option value='TB'>Teknik Biomedik</option><option value='Tekkom'>Teknik Komputer</option>");
+			} else if (val == "civplan") {
+				$("#jurusan").html(
+					"<option value='PWK'>Perancangan Wilayah Kota</option><option value='Arsi'>Arsitektur</option><option value='Teksip'>Teknik Sipil</option><option value='Tekling'>Teknik Lingkunga</option><option value='Geomat'>Teknik Geomatika</option><option value='Geofis'>Teknik Geofisika</option>");
+			} else if (val == "martech") {
+				$("#jurusan").html(
+					"<option value='Tekpal'>Teknik Perkapalan</option><option value='Tekla'>Teknik Kelautan</option><option value='Transla'>Teknik Transportasi Laut</option>");
+			} else if (val == "scientics") {
+				$("#jurusan").html(
+					"<option value='Biologi'>Biologi</option><option value='Aktuaria'>Aktuaria</option><option value='Mat'>Matematika</option><option value='Statistik'>Statistika</option><option value='Kimia'>Kimia</option><option value='Fisika'>Fisika</option>");
+			}
+		});
+	});
+</script>
+
+</html>
